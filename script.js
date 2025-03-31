@@ -37,8 +37,8 @@ function comparePrices() {
 
         let basePrices = {
             bike: 0,
-            auto: 0.5,
-            car: 1
+            auto: 5,
+            car: 15,
         };
 
         let rideTypeExtra = basePrices[rideType];
