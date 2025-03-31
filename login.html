@@ -14,25 +14,39 @@
     </header>
 
     <main>
-        <h1>Login</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="loginUsername">Username:</label>
-                <input type="text" id="loginUsername" placeholder="Enter username" required>
+        <div class="login-container">
+            <div class="login-form">
+                <h2>Member Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Username:</label>
+                        <input type="text" id="loginUsername" placeholder="Enter username" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" placeholder="Enter password" required>
+                    </div>
+            
+                    <button type="button" onclick="logIn()">Login</button>
+                </form>
+                <p class="signup-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
             </div>
-    
-            <div class="form-group">
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" placeholder="Enter password" required>
+
+            <div class="divider">
+                <span>OR</span>
             </div>
-    
-            <button type="button" onclick="logIn()">Login</button>
-        </form>
-    
-        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+
+            <div class="compare-section">
+                <h3>Quick Access</h3>
+                <button onclick="window.location.href='compare.html'" class="compare-btn">Compare Prices</button>
+                <p class="guest-note">Continue as guest to compare prices (limited features)</p>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Cab Price Comparison. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-<footer>
-    <p>&copy; 2025 Cab Price Comparison. All rights reserved.</p>
-</footer>
