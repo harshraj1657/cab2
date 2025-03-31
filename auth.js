@@ -42,8 +42,8 @@ function logIn() {
     }
 
     localStorage.setItem("loggedInUser", username);
-    alert("Login successful! Redirecting to price comparison...");
-    window.location.href = "compare.html";  // Changed from home.html to compare.html
+    // Remove the alert and redirect immediately
+    window.location.href = "compare.html";
 }
 
 function checkLogin() {
