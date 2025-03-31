@@ -1,9 +1,16 @@
 function signUp() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
+    let contact = document.getElementById("contact").value;
 
-    if (username === "" || password === "") {
+    if (username === "" || password === "" || contact === "") {
         alert("Please fill in all fields.");
+        return;
+    }
+
+    // Validate contact number is exactly 10 digits
+    if (!/^\d{10}$/.test(contact)) {
+        alert("Please enter a valid 10-digit contact number.");
         return;
     }
 
@@ -14,7 +21,7 @@ function signUp() {
         return;
     }
 
-    users.push({ username, password });
+    users.push({ username, password, contact });
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Signup successful! Redirecting to login.");
@@ -35,8 +42,8 @@ function logIn() {
     }
 
     localStorage.setItem("loggedInUser", username);
-    alert("Login successful! Redirecting...");
-    window.location.href = "compare.html";
+    alert("Login successful! Redirecting to price comparison...");
+    window.location.href = "compare.html";  // Changed from home.html to compare.html
 }
 
 function checkLogin() {
