@@ -225,9 +225,7 @@ footer {
 }
 /* Login Page Specific Styles */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
+    max-width: 400px;
     margin: 0 auto;
     background: white;
     padding: 30px;
@@ -257,44 +255,13 @@ footer {
     padding: 0 15px;
 }
 
-.compare-section {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #eee;
-    margin-top: 20px;
-}
-
-.compare-btn {
-    background-color: #17a2b8;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-    transition: all 0.3s ease;
-    margin: 10px 0;
-}
-
-.compare-btn:hover {
-    background-color: #138496;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 .signup-link {
     text-align: center;
     margin-top: 15px;
     color: #666;
 }
 
-.guest-note {
-    font-size: 14px;
-    color: #666;
-    margin-top: 10px;
-}
+
 
 @media (max-width: 600px) {
     .login-container {
@@ -304,4 +271,50 @@ footer {
     .compare-btn {
         padding: 10px 20px;
     }
+}
+/* Add to existing styles */
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    color: white;
+}
+
+#guestWarning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ffeeba;
+}
+
+#userGreeting {
+    margin-left: auto;
+    padding: 0 20px;
+    color: white;
+    font-weight: bold;
 }
