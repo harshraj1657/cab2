@@ -25,14 +25,21 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" placeholder="Enter password" required>
             </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" placeholder="Enter 10-digit contact number" 
+                       pattern="[0-9]{10}" title="Please enter exactly 10 digits" required>
+            </div>
     
             <button type="button" onclick="signUp()">Sign Up</button>
         </form>
     
         <p>Already have an account? <a href="login.html">Login here</a></p>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Cab Price Comparison. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-<footer>
-    <p>&copy; 2025 Cab Price Comparison. All rights reserved.</p>
-</footer>
