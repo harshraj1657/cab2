@@ -3,9 +3,30 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-image: url('cabs.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #333;
     line-height: 1.6;
+}
+
+/* Overlay for Better Readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+/* Ensure Content is Above the Overlay */
+header, main, footer {
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -59,9 +80,26 @@ input, button, select, textarea {
     transition: border-color 0.3s ease;
 }
 
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
 input:focus, select:focus, textarea:focus {
     border-color: #007bff;
     outline: none;
+}
+
+/* Validation Styles */
+input:invalid {
+    border-color: #dc3545;
+}
+
+input:invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 button {
@@ -77,52 +115,6 @@ button:hover {
     background-color: #218838;
 }
 
-/* Result Section */
-#result {
-    margin-top: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#result h3 {
-    margin-top: 0;
-}
-
-#result ul {
-    list-style: none;
-    padding: 0;
-}
-
-#result ul li {
-    background: #f8f9fa;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 18px;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    main {
-        padding: 10px;
-    }
-}
 /* Form Group Styling */
 .form-group {
     margin-bottom: 20px;
@@ -186,33 +178,130 @@ button[type="button"]:hover {
     border-radius: 8px;
     font-size: 18px;
 }
-/* Body Background */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('cabs.jpg'); /* Path to your background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #333;
-    line-height: 1.6;
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
 }
 
-/* Overlay for Better Readability */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.compare-btn {
+    background-color: #17a2b8;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
     width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* White overlay with 70% opacity */
-    z-index: -1;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
 }
 
-/* Ensure Content is Above the Overlay */
-header, main, footer {
-    position: relative;
-    z-index: 1;
+.compare-btn:hover {
+    background-color: #138496;
+}
+/* Login Page Specific Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    padding: 20px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #666;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+    padding: 0 15px;
+}
+
+.compare-section {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.compare-btn {
+    background-color: #17a2b8;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+.compare-btn:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+}
+
+.guest-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 15px;
+    }
+    
+    .compare-btn {
+        padding: 10px 20px;
+    }
 }
